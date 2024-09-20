@@ -1,1 +1,2 @@
-# newansible
+my github config succesfully
+
