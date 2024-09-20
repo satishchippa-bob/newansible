@@ -11,7 +11,7 @@
     - name: Install apache2
       apt:
         name: apache2
-        state: absent
+        state: present
 
     - name: Start Apache service
       service:
