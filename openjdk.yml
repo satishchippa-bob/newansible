@@ -1,16 +1,18 @@
 ---
 -hosts: all
- become: yes
+ become: true
  tasks:
    - name: Install jdk on ubuntu
      apt:
       name: openjdk-8-jdk
       state: present
-      when: ansible-os-family == "debian"
+     when: ansible-os-family == 
+"debian"
 
 
    - name: Install jdk 8 on red hat
      yum:
        name:  java-1.8.0-openjdk
        state: present
-    when: ansible_os_family =="redhat"
+     when: ansible_os_family ==
+"redhat"
