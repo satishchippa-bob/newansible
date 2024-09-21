@@ -9,7 +9,7 @@
         name: openjdk-8-jdk
         state: present
       when: ansible-os-family == 
- "debian"
+ "Debian"
 
 
    - name: Install jdk 8 on red hat
@@ -17,4 +17,4 @@
        name:  java-1.8.0-openjdk
        state: present
      when: ansible_os_family ==
- "redhat"
+ "RedHat"
