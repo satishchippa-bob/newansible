@@ -1,5 +1,6 @@
 ---
 - hosts: javaserver
+  vars: 
   become: yes
   tasks:
      - name: Install JDK 8 on ubuntu
