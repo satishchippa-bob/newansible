@@ -6,4 +6,4 @@
 
 [javaserver: vars]
 myubuntujavapackage: openjdk-8-jre 
-myredhatjavapackage: java-1.8.0-oepnjdk
+myredhatjavapackage: java-1.8.0-openjdk

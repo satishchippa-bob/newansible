@@ -1,7 +1,9 @@
 ---
 - hosts: javaserver
   vars:  
-    myubuntujavapackage: openjdk-8-jre
+    myubuntujavapackage: openjdk-8-jre 
+    myubuntujavapackage: java-1.8.0-openjdk
+
 
   become: yes
   tasks:
