@@ -4,5 +4,5 @@
 
 
 [javaserver: vars]
-myubuntujavapackage = openjdk-8-jre 
-myRedhatjavapackage = java-1.8.0-openjdk
+myubuntujavapackage = "openjdk-8-jre "
+myRedhatjavapackage = "java-1.8.0-openjdk"
