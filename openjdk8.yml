@@ -1,6 +1,8 @@
 ---
 - hosts: javaserver
-  vars: 
+  vars:  
+    myubuntujavapackage: openjdk-8-jre
+
   become: yes
   tasks:
      - name: Install JDK 8 on ubuntu
