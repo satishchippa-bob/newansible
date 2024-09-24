@@ -11,11 +11,10 @@
         msg: "{{ myvar_1 }}"
     - name : i want to install java jdk 8 on ubuntu
       apt :
-        name: "{{item}}"
+        name: "{{ item }}"
         state: present
-        loop:
-            
-          - "{{ myvar_1 }}"
-          - "{{ myvar_2 }}"
-          - "{{ myvar_3 }}"
+      loop:  
+        - "{{ myvar_1 }}"
+        - "{{ myvar_2 }}"
+        - "{{ myvar_3 }}"
             
