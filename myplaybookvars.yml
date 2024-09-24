@@ -15,6 +15,5 @@
         state: present
       loop:  
         - "{{ myvar_1 }}"
-        - "{{ myvar_2 }}"
-        - "{{ myvar_3 }}"
+        - 
             
