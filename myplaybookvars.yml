@@ -8,7 +8,7 @@
   tasks:
     - name : i want display my var
       debug: 
-        msg: "{{ myvar_1 }}"
+        msg: "{{ myvar_2}}"
     - name : i want to install java jdk 8 on ubuntu
       apt :
         name: "{{ item }}"
