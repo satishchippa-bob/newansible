@@ -2,7 +2,7 @@
 - hosts: javaserver
   become: yes
   tasks:
-     -name: i want to run linux commands
+    - name: i want to run linux commands
       command : hostname -f
       register : myresult
      -name: i want to display linux command output value
