@@ -8,3 +8,14 @@
     - name: i want to display linux command output value
       debug:
         msg: "{{myresult}}"
+
+    - name: i want install git 
+      apt:
+        name: git
+        state: present
+      when: myresult.stderr == ""     
+    - name: i want install git 
+      apt:
+        name: git
+        state: present
+      when: myresult.stderr != ""   

@@ -14,7 +14,8 @@
         name: "{{item}}"
         state: present
         loop:
-            -"{{myvar_1}}"
-            -"{{myvar_2}}"
-            -"{{myvar_3}}"
+            -
+          - "{{myvar_1}}"
+          - "{{myvar_2}}"
+          - "{{myvar_3}}"
             
