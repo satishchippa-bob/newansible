@@ -14,8 +14,8 @@
         name: git
         state: present
       when: myresult.stderr == ""     
-    - name: i want install git 
+    - name: i want install tree
       apt:
-        name: git
+        name: tree
         state: present
       when: myresult.stderr != ""   
