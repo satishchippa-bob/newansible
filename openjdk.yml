@@ -9,7 +9,7 @@
         state: present
       when: ansible-os-family == "Debian"
 
-   -  name: Install JDK 8 on Red Hat
+    - name: Install JDK 8 on Red Hat
       yum:
         name: "{{myredhatjavapackage}}"
         state: present
