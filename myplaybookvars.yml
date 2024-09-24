@@ -2,9 +2,9 @@
 - hosts: mywebserver
   become: yes
   vars:
-     myvar 1 : git
-     myvar 2 : tree
-     myvar 3 : apache2
+     myvar_1 : git
+     myvar_2 : tree
+     myvar_3 : apache2
   tasks:
     - name : i want display my var
       debug: 
