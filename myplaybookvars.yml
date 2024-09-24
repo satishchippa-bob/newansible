@@ -9,3 +9,12 @@
     - name : i want display my var
       debug: 
         msg: "{{myvar_1}}"
+    - name : i want to install java jdk 8 on ubuntu
+      apt :
+        name: "{{item}}"
+        state: present
+        loop:
+            -"{{myvar_1}}"
+            -"{{myvar_2}}"
+            -"{{myvar_3}}"
+            
