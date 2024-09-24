@@ -1,16 +1,16 @@
 ---
-- hosts: all
+- hosts: javaserver
   become: yes
   tasks:
 
     - name: Install jdk on ubuntu
       apt:
-        name: openjdk-8-jdk
+        name: "{{ myubuntujavapackage }}"
         state: present
       when: ansible-os-family == "Debian"
 
-   - name: Install JDK 8 on Red Hat
-     yum:
-        name: java-1.8.0-openjdk
+   -  name: Install JDK 8 on Red Hat
+      yum:
+        name: "{{myredhatjavapackage}}"
         state: present
      when: ansible_os_family =="RedHat"
