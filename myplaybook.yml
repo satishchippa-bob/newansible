@@ -1,0 +1,20 @@
+---
+- hosts: javaserver
+  become: yes
+  vars:
+     myvar_1: git
+     myvar_2: tree
+     myvar_3: apache2
+  tasks:
+    - name: Display myvar_1
+      debug: 
+        msg: "{{ myvar_1 }}"
+      
+    - name: Install packages including Java JDK 8 on Ubuntu
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - "{{ myvar_1 }}"
+        - "{{ myvar_2 }}"
+        - "{{ myvar_3 }}"
