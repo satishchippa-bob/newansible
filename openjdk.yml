@@ -5,7 +5,7 @@
 
     - name: Install jdk on ubuntu
       apt:
-        name: "{{ myubuntujavapackage }}"
+        name: "{{myubuntujavapackage}}"
         state: present
       when: ansible-os-family == "Debian"
 
