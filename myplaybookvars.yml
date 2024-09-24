@@ -21,4 +21,10 @@
         - "{{ myvar_1 }}"
         - "{{ myvar_2 }}"
         - "{{ myvar_3}}"
-            
+
+   - name: Install packages using command
+     command: apt-get install -y "{{ item }}"
+     loop:
+    - "{{ myvar_1 }}"
+    - "{{ myvar_2 }}"
+    - "{{ myvar_3 }}"
