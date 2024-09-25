@@ -14,6 +14,7 @@
         state: present     
       when: ansible_os_family == "RedHat"
       tags: my m
+      ignore_errors: yes
       
     - name: install wget
       apt:
