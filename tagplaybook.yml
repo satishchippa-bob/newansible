@@ -9,7 +9,7 @@
       tags: mytree
       ignore_errors: yes
     - name: install m
-      apt:
+      yum:
         name: m
         state: present     
       when: ansible_os_family == "RedHat"
