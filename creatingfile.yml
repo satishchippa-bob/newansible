@@ -1,0 +1,9 @@
+---
+- hosts: javaserver
+  become: yes
+  tasks:
+    - name: i want to file into ansible
+      file:
+        path: /home/satish/myfile.txt
+      state: touch
+        
