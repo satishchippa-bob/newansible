@@ -7,13 +7,13 @@
         name: tree
         state: present
       tags: mytree
-      ignore_errors: yes
     - name: install m
       apt:
         name: m
         state: present     
       when: ansible_os_family == "RedHat"
       tags: my m
+      ignore_errors: yes
     - name: install wget
       apt:
         name: wget
