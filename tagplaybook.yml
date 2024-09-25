@@ -7,10 +7,11 @@
         name: tree
         state: present
       tags: mytree
+      ignore_errors: yes
     - name: install m
       apt:
         name: m
         state: present
       tags: my m
-          
+
 
