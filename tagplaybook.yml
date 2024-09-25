@@ -1,0 +1,16 @@
+---
+- hosts: javaserver
+  become: yes
+  tasks:
+    - name: install tree
+      apt:
+        name: tree
+        state: present
+      tags: mytree
+    - name: install m
+      apt:
+        name: m
+        state: present
+      tags: my m
+          
+
