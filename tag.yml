@@ -1,0 +1,33 @@
+---
+- hosts: javaserver
+  become: yes
+  tasks:
+    - name: Install tree on Debian/Ubuntu
+      apt:
+        name: tree
+        state: present
+      when: ansible_os_family == "Debian"
+      tags: mytree
+      ignore_errors: yes
+
+    - name: Install tree on RedHat-based systems
+      yum:
+        name: tree
+        state: present
+      when: ansible_os_family == "RedHat"
+      tags: mytree
+
+    - name: Install wget on Debian/Ubuntu
+      apt:
+        name: wget
+        state: present
+      when: ansible_os_family == "Debian"
+      tags: mywget
+
+    - name: Install wget on RedHat-based systems
+      yum:
+        name: wget
+        state: present
+      when: ansible_os_family == "RedHat"
+      tags: mywget
+
