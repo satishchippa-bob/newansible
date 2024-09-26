@@ -8,7 +8,7 @@
   tasks:
     - name: Display myvar_1
       debug: 
-        msg: "{{ myvar_1 }}"
+        msg: "{{ myvar_2 }}"
       
     - name: Install packages including Java JDK 8 on Ubuntu
       apt:
@@ -17,4 +17,4 @@
       loop:
         - "{{ myvar_1 }}"
         - "{{ myvar_2 }}"
-        - "{{ myvar_3 }}"
+       # - "{{ myvar_3 }}" #
