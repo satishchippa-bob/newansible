@@ -4,5 +4,5 @@
   tasks:
     - name: i want to file into ansible
       file:
-        path: /home/satish/myfile.txt
+        path: /home/satish/myfile1.txt
         state: touch

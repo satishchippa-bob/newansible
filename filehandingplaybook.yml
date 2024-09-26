@@ -1,10 +1,11 @@
 ---
--  hosts: javaserver
-   become: yes
-   tasks:
+- hosts: jaavserver
+  become: yes
+  tasks:
     - include_tasks: creatingfile.yml
 
-    - name: Install Apache2 on node server
+    - name: i want to install apache2 on node server
       apt:
-          name: apache2
-          state: present
+        name: apache2
+        state: present
+        
