@@ -4,8 +4,7 @@
   tasks:
     - include_tasks: creatingfile.yml
 
-    - name: i want to install apache2 on node server
+    - name: Install Apache2 on node server
       apt:
         name: apache2
         state: present
-        
