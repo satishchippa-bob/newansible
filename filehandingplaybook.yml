@@ -8,7 +8,7 @@
        apt:
          name: apache2
          state: present 
-       ignore_errors: yes
+       
 
 
      - name: i want to replace apache2 
