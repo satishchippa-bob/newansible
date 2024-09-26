@@ -1,5 +1,5 @@
 ---
-- hosts: jaavserver
+- hosts: javaserver
   become: yes
   tasks:
     - include_tasks: creatingfile.yml
@@ -8,4 +8,4 @@
       apt:
         name: apache2
         state: present
-        
+
