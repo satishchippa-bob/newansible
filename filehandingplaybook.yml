@@ -8,7 +8,7 @@
        apt:
          name: apache2
          state: present 
-      notify: restatedservice 
+       notify: restatedservice 
 
 
      - name: i want to replace apache2 
