@@ -1,6 +1,6 @@
 
-    - name: Install jdk on ubuntu
+    - name: Install apache
       apt:
-        name: "{{myserve}}"
+        name: "{{myserver}}"
         state: present
       when: ansible_os_family == "Debian"
