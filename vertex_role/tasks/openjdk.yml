@@ -1,7 +1,4 @@
----
-- hosts: javaserver
-  become: yes
-  tasks:
+
 
     - name: Install jdk on ubuntu
       apt:
