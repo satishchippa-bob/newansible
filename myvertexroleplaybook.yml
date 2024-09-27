@@ -1,0 +1,5 @@
+---
+- hosts: javaserver
+  become: yes
+  roles:
+    - vertex_role
