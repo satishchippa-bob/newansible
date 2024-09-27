@@ -7,12 +7,20 @@
      - name: i want to install apache2 on node server
        apt:
          name: apache2
-         state: present
+         state: present 
+      notify: restatedservice 
+
+
      - name: i want to replace apache2 
        template:
            src: newtemplate.j2
            dest: /var/www/html/index.html   
+       notify: restatedservice  
+  handlers:      
+    - name : restatedservice
+      service: 
+        name: apache2
+        state: restarted   
 
-       
-
+    
 
