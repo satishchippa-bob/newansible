@@ -1,3 +1,3 @@
 ---
 # tasks file for devops_role
-- include_tasks: openjdk.yml
+- include_tasks: sample1.yml
