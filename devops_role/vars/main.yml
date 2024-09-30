@@ -1,7 +1,7 @@
 ---
 # vars file for devops_role
-myubuntujavapackage : openjdk-8-jre 
-myredhatjavapackage : java-1.8.0-openjdk
-myserver: apache2
+# myubuntujavapackage : openjdk-8-jre 
+# myredhatjavapackage : java-1.8.0-openjdk
+# myserver: apache2
 
-
+mysqlpasswd: satish123
