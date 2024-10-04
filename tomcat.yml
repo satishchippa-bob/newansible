@@ -1,4 +1,4 @@
--- 
+---
 - hosts: javaserver
   become: yes
   roles:
