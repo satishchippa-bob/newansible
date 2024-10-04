@@ -1,0 +1,51 @@
+--- 
+- name: Give the tomcat group ownership
+  file:
+    path: /opt/tomcat
+    state: directory
+    recurse: yes
+    owner: tomcat
+    group: tomcat
+
+- name: Change file ownership of opt tomcat conf folder
+  file:
+    path: /opt/tomcat/conf
+    recurse: yes
+    mode: g+r
+    state: directory
+
+# Step 4.3 — give the tomcat group excute access to the conf directory and all of its contents, 
+- name: tomcat group read access to the conf directory 
+  file:
+    path: /opt/tomcat/conf
+    mode: g+x
+    state: directory
+
+- name: Change file ownership of webapps
+  file:
+    path: /opt/tomcat/webapps
+    recurse: yes
+    owner: tomcat
+    state: directory
+
+
+- name: Change file ownership of work
+  file:
+    path: /opt/tomcat/work
+    recurse: yes
+    owner: tomcat
+    state: directory   
+
+- name: Change file ownership of temp
+  file:
+    path: /opt/tomcat/temp
+    recurse: yes
+    owner: tomcat
+    state: directory
+
+- name: Change file ownership logs
+  file:
+    path: /opt/tomcat/logs
+    recurse: yes
+    owner: tomcat
+    state: directory
