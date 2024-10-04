@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - batch_role
+    - tomcat_role
