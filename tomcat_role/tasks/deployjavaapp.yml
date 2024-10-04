@@ -1,6 +1,6 @@
 --- 
 - name: i want to deply java application
   get_url: 
-      url: https://mytomcat1.s3.us-west-2.amazonaws.com/mahaLogin-5.0.war
+      url: https://myawstomcat.s3.us-west-2.amazonaws.com/mahaLogin-5.0.war
       dest: /opt/tomcat/webapps/mahaLogin-5.0.war
       force_basic_auth: yes
