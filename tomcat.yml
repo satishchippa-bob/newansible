@@ -1,5 +1,5 @@
 -- 
-- hosts: mywebserver
+- hosts: javaserver
   become: yes
   roles:
    - {role: tomcat_role , when: ansible_os_family=="Debian"}-
