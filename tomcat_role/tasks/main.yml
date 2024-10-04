@@ -1,11 +1,11 @@
 ---
 # tasks file for tomcat_role
-    - include_tasks : InstallJava.yml
-    - include_tasks : CreateTomcatUser.yml
-    - include_tasks : InstallTomcat.yml
-    - include_tasks : UpdatePermissions.yml
-    - include_tasks : tomcatservicefile.yml
-    - include_tasks : tomcatservicstart.yml
-    - include_tasks : tomcatservicmgmm.yml
+    - include_tasks : createtomcat.yml
     - include_tasks : deployjavaapp.yml
+    - include_tasks : instaljaval.yml
+    - include_tasks : updatepermissions.yml
+    - include_tasks : tomcatservicefile.yml
     - include_tasks : restarttomcat.yml
+    - include_tasks : tomcatservicestart.yml
+    - include_tasks : installtomcat.yml
+    - include_tasks : tomcatservicemgmm.yml
