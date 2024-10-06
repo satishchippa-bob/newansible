@@ -1,4 +1,4 @@
 ---
 # vars file for nigix-role
-hostname: "your_hostname"
+hostname: " ansibleanode "
 html_content: "Vertex Technology Deploy Batch at 8.30, your name"
