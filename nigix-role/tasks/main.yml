@@ -8,7 +8,7 @@
 
 - name: Configure hostname
   hostname:
-    name: "{{ ansibleanode }}"
+    name: "{{ ansiblemaster }}"
 
 - name: Create Nginx configuration file
   template:
