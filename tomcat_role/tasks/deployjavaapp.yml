@@ -1,6 +1,11 @@
 --- 
-- name: i want to deply java application
-  get_url: 
-      url: https://myawstomcat.s3.us-west-2.amazonaws.com/mahaLogin-5.0.war
-      dest: /opt/tomcat/webapps/mahaLogin-5.0.war
-      force_basic_auth: yes
+#- name: i want to deply java application
+# get_url: 
+#     url: https://myawstomcat.s3.us-west-2.amazonaws.com/mahaLogin-5.0.war
+#      dest: /opt/tomcat/webapps/mahaLogin-5.0.war
+#     force_basic_auth: yes
+- name: Deploy the mahaLogin-5.0.war file
+  get_url:
+    url: "https://myawstomcat.s3.us-west-2.amazonaws.com/mahaLogin-5.0.war"
+    dest: "/opt/tomcat/webapps/mahaLogin-5.0.war"
+    mode: '0644'
