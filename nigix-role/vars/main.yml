@@ -1,4 +1,7 @@
 ---
 # vars file for nigix-role
-hostname: " ansibleanode "
-html_content: "Vertex Technology Deploy Batch at 8.30, your name"
+- name: Set transient hostname
+  hostname:
+    name: 'ansibleanode'
+#hostname: ' ansibleanode '
+#html_content: "Vertex Technology Deploy Batch at 8.30, your name"
