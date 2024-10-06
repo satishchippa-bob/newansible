@@ -11,3 +11,10 @@
     shell: /bin/false 
     home: /opt/tomcat
     state: present 
+#- name: Ensure /opt/tomcat/webapps directory exists
+#  file:
+#    path: /opt/tomcat/webapps
+#    state: directory
+#    owner: tomcat
+#    group: tomcat
+#    mode: '0755'
