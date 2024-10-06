@@ -1,5 +1,5 @@
 ---
-- hosts: 172.31.31.67
+- hosts: javaserver
   become: yes
   roles:
     - nigix-role
