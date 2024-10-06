@@ -1,2 +1,30 @@
 ---
 # tasks file for nigix-role
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+    update_cache: yes
+
+- name: Configure hostname
+  hostname:
+    name: "{{ hostname }}"
+
+- name: Create Nginx configuration file
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+  notify: Restart Nginx
+
+- name: Ensure Nginx is running
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: Schedule a cron job to deploy the HTML page at 8:30 AM
+  cron:
+    name: "Deploy HTML page"
+    minute: "30"
+    hour: "8"
+    job: "ansible-playbook /path/to/your/playbook.yml"
