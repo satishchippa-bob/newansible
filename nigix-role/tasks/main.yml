@@ -14,7 +14,7 @@
   template:
     src: index.html.j2
     dest: /var/www/html/index.html
-  notify: Restart Nginx
+  notify: Restart nigix
 
 - name: Ensure Nginx is running
   service:
