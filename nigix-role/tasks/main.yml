@@ -1,5 +1,5 @@
 ---
-# tasks file for nigix-role
+# tasks file for nginx-role
 - name: Install Nginx
   apt:
     name: nginx
@@ -14,7 +14,7 @@
   template:
     src: index.html.j2
     dest: /var/www/html/index.html
-  notify: Restart nigix
+  notify: Restart nginx
 
 - name: Ensure Nginx is running
   service:
