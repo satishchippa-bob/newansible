@@ -46,7 +46,7 @@
     state: absent
 
 # Restart NGINX to apply changes
-- name: Restart nginx
-  service:
-    name: nginx
-    state: restarted
+#- name: Restart nginx
+#  service:
+#    name: nginx
+#    state: restarted
