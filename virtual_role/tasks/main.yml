@@ -28,7 +28,7 @@
 # Configure the virtual host
 - name: Deploy nginx virtual host configuration
   template:
-    src: nginx_vhost.j2
+    src: nginx-vhost.j2
     dest: "/etc/nginx/sites-available/{{ html }}"
     mode: '0644'
 
