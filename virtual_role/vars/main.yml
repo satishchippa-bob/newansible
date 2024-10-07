@@ -1,2 +1,5 @@
 ---
-# vars file for virtual_role
+# vars file for virtual_role---
+html: mysite.com
+
+
