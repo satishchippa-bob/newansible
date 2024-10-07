@@ -19,7 +19,7 @@
 - name: Ensure Nginx is running
   service:
     name: nginx
-    state: started
+    state: Restarted
     enabled: yes
 
 - name: Schedule a cron job to deploy the HTML page at 8:30 AM
