@@ -16,11 +16,11 @@
     dest: /var/www/html/index.html
   notify: Restart nigix
 
-- name: Ensure Nginx is running
-  service:
-    name: nginx
-    state: started
-    enabled: yes
+#- name: Ensure Nginx is running
+#  service:
+#    name: nginx
+#    state: started
+#    enabled: yes
 
 - name: Schedule a cron job to deploy the HTML page at 8:30 AM
   cron:
