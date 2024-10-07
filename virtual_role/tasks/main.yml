@@ -1,2 +1,52 @@
 ---
 # tasks file for virtual_role
+# Install NGINX
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+    update_cache: yes
+
+# Create directories for virtual hosts
+- name: Create directory for site
+  file:
+    path: "/var/www/{{ html }}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: 0755
+
+# Deploy the sample HTML page
+- name: Deploy sample HTML page
+  template:
+    src: index.html.j2
+    dest: "/var/www/{{ html }}/index.html"
+    owner: www-data
+    group: www-data
+    mode: '0644'
+
+# Configure the virtual host
+- name: Deploy nginx virtual host configuration
+  template:
+    src: nginx_vhost.j2
+    dest: "/etc/nginx/sites-available/{{ html }}"
+    mode: '0644'
+
+# Enable the virtual host
+- name: Enable site
+  file:
+    src: "/etc/nginx/sites-available/{{ html }}"
+    dest: "/etc/nginx/sites-enabled/{{ html }}"
+    state: link
+
+# Remove default site
+- name: Remove default nginx site
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+
+# Restart NGINX to apply changes
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted
