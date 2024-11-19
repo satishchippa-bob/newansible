@@ -1,21 +1,10 @@
-#FROM python:latest
-#WORKDIR /app
-#COPY . /app
-#CMD ["python3","app.py"]
-# Use a base Python image
-FROM python:3.10
+FROM ubuntu
 
-# Set the working directory
+RUN apt update
+RUN apt install python3-pip -y
+RUN pip3 install Flask
+
 WORKDIR /app
 
-# Copy the Python script into the container
-COPY app.py /app
-
-# Install dependencies (if you have any requirements.txt, you can use that)
-RUN pip install flask
-
-# Expose the port that Flask will run on
-EXPOSE 5000
-
-# Command to run the Flask app
-CMD ["python", "app.py"]
+COPY ..
+CMD ["python3", "-m" , "flask", "run", "--host+0.0.0.0"]
