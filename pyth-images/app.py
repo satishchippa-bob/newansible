@@ -14,7 +14,7 @@ def home():
     return "Hello, world from Flask!"
 
 if _name_ == '_main_':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='34.222.144.47', port=5000)
     
     
     
