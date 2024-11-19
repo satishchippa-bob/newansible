@@ -1,3 +1,10 @@
+import time  # Import the time module for delays
+
+while True:  # Infinite loop
+    time.sleep(1)  # Pause for 1 second in each iteration
+
+
+
 from flask import Flask
 
 app = Flask(_name_)
@@ -12,7 +19,6 @@ if _name_ == '_main_':
     
     
     
-    # import time
-#while True:#    time.sleep(1)
+     
 
 #print("hello python")
