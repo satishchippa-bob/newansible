@@ -1,0 +1,5 @@
+- name: Apply my role
+  hosts: all
+  roles:
+    - satish_role
+
