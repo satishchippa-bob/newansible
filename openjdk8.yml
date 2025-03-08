@@ -9,7 +9,7 @@
   tasks:
      - name: Install JDK 8 on ubuntu
        apt:
-         name: "{{myubuntujavapackage }}"
+         name: "{{myubuntujavapackage}}"
          state: present
        when: ansible_os_family == "Debian"
 

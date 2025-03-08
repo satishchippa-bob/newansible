@@ -1,2 +1,7 @@
 ---
 # tasks file for satish_role
+---
+- name: Create a file with your name and date
+  copy:
+    content: "{{ ansible_date_time.date }} - {{ my_satish}}\n"
+    dest: "/tmp/satish"
