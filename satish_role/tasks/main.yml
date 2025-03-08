@@ -1,5 +1,6 @@
 ---
-- name: Create a file with your name and date
-  ansible.builtin.copy:
-    content: "My name is {{ my_satish }} and today's date is {{ ansible_date_time.date }}"
-    dest: /tmp/satish_info.txt
+- name: create a fike with the date and namr
+  template:
+    src: myfile.j2
+    dest: "/path/to.destination/satish"
+  mode: '0644'

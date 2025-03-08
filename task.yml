@@ -1,6 +1,5 @@
-- name: Create a file with your name
-  hosts: all
-  vars:
-    my_satish: "Hello from Satish"
+---
+- name: apply the role
+  hosts: localhost
   roles:
     - satish_role
