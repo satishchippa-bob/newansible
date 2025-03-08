@@ -1,5 +1,5 @@
 ---
 - name: Create a file with your name and date
-  copy:
-    content: "{{ ansible_date_time.date }} - {{ my_satish}}\n"
-    dest: "/tmp/satish"
+  ansible.builtin.copy:
+    content: "My name is {{ my_satish }} and today's date is {{ ansible_date_time.date }}"
+    dest: /tmp/satish_info.txt

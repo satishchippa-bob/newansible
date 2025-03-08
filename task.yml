@@ -1,5 +1,6 @@
-- name: Apply my role
+- name: Create a file with your name
   hosts: all
+  vars:
+    my_satish: "Hello from Satish"
   roles:
     - satish_role
-

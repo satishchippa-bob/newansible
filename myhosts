@@ -1,1 +1,6 @@
-3.101.60.236
+all:
+  hosts:
+    3.101.60.236:
+      ansible_user: ubuntu
+      my_satish: "Hello from Satish"
+
