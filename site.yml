@@ -1,5 +1,9 @@
 ---
-- hosts: javaserver
-  become: yes
+#- hosts: javaserver
+#  become: yes
+#  roles:
+#    - nigix-role
+- name: apply the role
+  hosts: localhost
   roles:
-    - nigix-role
+    - satish_role
