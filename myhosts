@@ -1,7 +1,2 @@
-all:
-  hosts:
-    3.101.60.236:
-      
-      my_satish: "Hello from Satish"
-
-hlo
+[my_servers]
+3.101.60.236
