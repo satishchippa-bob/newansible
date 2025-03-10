@@ -1,10 +1,11 @@
 ---
 # tasks file for display_info
 
-- name: Ensure Apache is installed
-  package:
-    name: httpd
+- name: Install Apache2 (HTTP Server)
+  apt:
+    name: apache2
     state: present
+    update_cache: yes
 
 - name: Start and enable Apache service
   service:
