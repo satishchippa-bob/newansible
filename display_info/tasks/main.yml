@@ -1,42 +1,64 @@
 ---
 # tasks file for display_info
 
-- name: Install Apache2 (HTTP Server)
+- name: Install Apache Web Server
   apt:
     name: apache2
     state: present
     update_cache: yes
+  when: ansible_os_family == "Debian"
+  become: true
+
+- name: Install Apache Web Server (RedHat)
+  yum:
+    name: httpd
+    state: present
+    update_cache: yes
+  when: ansible_os_family == "RedHat"
+  become: true
 
 - name: Start and enable Apache service
   service:
-    name: httpd
+    name: "{{ 'apache2' if ansible_os_family == 'Debian' else 'httpd' }}"
     state: started
     enabled: yes
+  become: true
 
 - name: Create web directory
   file:
     path: /var/www/html
     state: directory
-    owner: apache
-    group: apache
+    owner: "{{ 'www-data' if ansible_os_family == 'Debian' else 'apache' }}"
+    group: "{{ 'www-data' if ansible_os_family == 'Debian' else 'apache' }}"
     mode: '0755'
+  become: true
 
 - name: Deploy HTML page
   template:
     src: index.html.j2
     dest: /var/www/html/index.html
-    owner: apache
-    group: apache
+    owner: "{{ 'www-data' if ansible_os_family == 'Debian' else 'apache' }}"
+    group: "{{ 'www-data' if ansible_os_family == 'Debian' else 'apache' }}"
     mode: '0644'
+  become: true
 
-- name: Allow HTTP traffic on firewall (if needed)
+- name: Allow HTTP traffic on RedHat (firewalld)
   firewalld:
     service: http
     permanent: yes
     state: enabled
   when: ansible_os_family == "RedHat"
+  become: true
+
+- name: Allow HTTP traffic on Debian (ufw)
+  ufw:
+    rule: allow
+    name: "Apache Full"
+  when: ansible_os_family == "Debian"
+  become: true
 
 - name: Restart Apache to load the page
   service:
-    name: httpd
+    name: "{{ 'apache2' if ansible_os_family == 'Debian' else 'httpd' }}"
     state: restarted
+  become: true
