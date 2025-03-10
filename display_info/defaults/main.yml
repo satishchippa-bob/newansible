@@ -1,2 +1,4 @@
 ---
 # defaults file for display_info
+date: "{{ ansible_date_time.date }}"
+

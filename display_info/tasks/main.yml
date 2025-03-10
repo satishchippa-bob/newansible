@@ -1,2 +1,41 @@
 ---
 # tasks file for display_info
+
+- name: Ensure Apache is installed
+  package:
+    name: httpd
+    state: present
+
+- name: Start and enable Apache service
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+
+- name: Create web directory
+  file:
+    path: /var/www/html
+    state: directory
+    owner: apache
+    group: apache
+    mode: '0755'
+
+- name: Deploy HTML page
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    owner: apache
+    group: apache
+    mode: '0644'
+
+- name: Allow HTTP traffic on firewall (if needed)
+  firewalld:
+    service: http
+    permanent: yes
+    state: enabled
+  when: ansible_os_family == "RedHat"
+
+- name: Restart Apache to load the page
+  service:
+    name: httpd
+    state: restarted

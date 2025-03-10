@@ -1,11 +1,4 @@
----
-- hosts: all
+- hosts: web_servers
   become: yes
-  tasks:
-
-
-   - name: Create a file with date and 'satish'
-     copy:
-       content: "{{ ansible_date_time.date }} satish"
-       dest: /var/www/html/satish_file.txt
-
+  roles:
+    - display_info
