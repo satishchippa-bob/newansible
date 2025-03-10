@@ -1,5 +1,5 @@
 ---
-- hosts: my_servers
+- hosts: all
   become: yes
   roles:
     - satish_role
